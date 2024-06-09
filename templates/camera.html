@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webcam Head Placement</title>
-    <script src="{{url_for('static', filename='styles.css')}}"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
 </head>
 <body>
     <div class="container">
         <video id="video" autoplay></video>
-        <div class="overlay"></div>
-        <p>Hi</p>
-
+       
+        <canvas id="canvas" width="700" height="500" style="display:none;"></canvas>
+        <button id="captureButton">Capture Image</button>
     </div>
-    
+
     <script src="{{url_for('static', filename='script.js')}}"></script>
-</body>
-</html>
