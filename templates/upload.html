@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+</head>
+<body>
+    <h1>Eyeglass Virtual Try on by Figures Group</h1>
+    <h1>Upload Image</h1>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*">
+        <button type="submit">Upload</button>
+    </form>
+<H3>Click the button to use Camera Instead</H3>
+<button onclick= "window.location.href='/camera'" type="button">Use camera</button>
+
+</body>
+</html>

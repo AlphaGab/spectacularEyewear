@@ -31,34 +31,51 @@ def predictbase64():
    
     received_image_data_url = data['imageDataUrl']
     image_byte = base64_to_image(received_image_data_url)
-    image_data = image_byte.read()
+    image_data = image_byte
 
     if(not detect_faces(image_data)):
         return render_template('noface.html')
        
     predictShapes = predictfromCamera(image_byte)
     return redirect(url_for('vto', head_shape=predictShapes))
-    
+
+
 
 @app.route('/index', methods=['GET'])
 def index():
 
-   return render_template('index.html')
+   return render_template('index.html')   
+
+
+
+@app.route('/upload', methods=['GET'])
+def index():
+
+   return render_template('upload.html')
 
 @app.route('/vto', methods=['GET'])
 def vto():
-    head_shape = request.args.get('head_shape')
-    if(head_shape == 'Oval'):
+    head_shape = request.args.get('head_shape').lower()
+    if(head_shape == 'oval'):
         return render_template('ovalface.html') 
-    elif (head_shape == 'Heart' ):
+    elif (head_shape == 'heart' ):
         return render_template('heartface.html') 
-    elif(head_shape == "Round"): 
+    elif(head_shape == "round"): 
         return render_template('roundface.html') 
-    elif(head_shape == "Square"): 
+    elif(head_shape == "square"): 
         return render_template('squareface.html')
     else: 
         return render_template('oblongface.html')
+    
+@app.route('/glass_details', methods=['GET'])
+def glassJson():
+    
+    json_file_path = os.path.join(app.static_folder, 'glassesInformation.json')
+    with open(json_file_path, 'r') as file:
+        data = json.loads(file.read())
+
         
+    return jsonify(data)
 
 @app.route('/camera', methods=['GET'])
 def camera():

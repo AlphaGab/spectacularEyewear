@@ -7,11 +7,16 @@
     <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
 </head>
 <body>
+    <h2>Take an Image to determine Face Shape</h2>  
     <div class="container">
+         
         <video id="video" autoplay></video>
        
         <canvas id="canvas" width="700" height="500" style="display:none;"></canvas>
         <button id="captureButton">Capture Image</button>
+        <button onclick="window.location.href = '/upload';">Upload Image Instead</button>
     </div>
+    </div>
+
 
     <script src="{{url_for('static', filename='script.js')}}"></script>

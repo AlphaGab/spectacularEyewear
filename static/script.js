@@ -16,9 +16,8 @@ captureButton.addEventListener('click',function(){
     const imageDataUrl = canvas.toDataURL('image/png');
     // Display the snapshot image
     sendDataToBackend(imageDataUrl)
-    console.log(imageDataUrl)
+    
 });
-
 
 function sendDataToBackend(imageDataUrl) {
     // Send the imageDataUrl directly in the body of the POST request
@@ -29,10 +28,23 @@ function sendDataToBackend(imageDataUrl) {
         },
         body: JSON.stringify({ 'imageDataUrl': imageDataUrl })
     })
-    .then(response => response.json())
-    .then (json=>console.log(json))
+    .then(response => {
+        if (response.redirected) {
+            window.location.href = response.url;
+            console.log(response.url)
+            return;
+        }
+        return response.json();
+    })
+    .then(json => {
+        if (json) {
+            console.log(json);
+            // Handle other response data
+        }
+    })
     .catch(error => {
         console.error('Error sending image data to backend:', error);
     });
 }
+
    	

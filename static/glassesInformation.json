@@ -1,0 +1,23 @@
+[
+    {
+        "name": "1",
+        "Title": "Regular",
+        "Sizes": "Sizes",
+        "Shop Name": "Starfinder",
+        "Description": "Description",
+        "imageName": "1.jpg",
+        "color": [
+            "black",
+            "white"
+        ]
+    },
+    {
+        "name": "2",
+        "Title": "Special",
+        "Sizes": "Sizes",
+        "Shop Name": "Eyebuydirect",
+        "Description": "Description",
+        "imageName": "2.png",
+        "color": []
+    }
+]

@@ -55,7 +55,7 @@ function main(){
     // (only the depth buffer is updated).
     // It is useful to hide the left glasses branch when the head turns on the left.
     occluderURL: "static/assets/models3D/occluder.glb",
-    modelURL: "static/assets/models3D/glasses1.glb", //initial model loaded. false or null -> no model
+    modelURL: "static/assets/models3D/", //initial model loaded. false or null -> no model
     envmapURL: "static/assets/envmaps/venice_sunset_1k.hdr",
 
     // lighting:

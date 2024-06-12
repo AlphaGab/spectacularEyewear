@@ -54,11 +54,61 @@
     <!-- INCLUDE LANDMARKS STABILIZER -->
     <script src="{{ url_for('static', filename='helpers/landmarksStabilizers/OneEuroLMStabilizer.js') }}"></script>
 
-    <script src="{{ url_for('static', filename='glassesDetails.js') }}"></script>
 
+    <style type='text/css'>
+      body {
+        margin: 0;
+        background-color: silver;
+      }
+      #WebARRocksFaceCanvas, #threeCanvas {
+        /*position: absolute;
+        width: 100vw;*/
+        position: fixed;
+        height: 100vh;
+        top: 0;
+        left: 50%;
 
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vto.css') }}">
-   
+        /* mirror the canvas: */
+        transform: rotateY(180deg) translate(50%, 0px);
+      }
+
+      #WebARRocksFaceCanvas {
+        z-index: 0;
+      }
+      #threeCanvas {
+        z-index: 1;
+      }
+
+      #controls {
+        display: none;
+        position: fixed;
+        z-index: 2;
+        width: 100vw;
+        bottom: 0;
+        left: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      #controls > div {
+        cursor: pointer;
+        flex-grow: 1;
+        font-variant: small-caps;
+        font-size: 14pt;
+        text-align: center;
+        min-width: 110px;
+        box-sizing: border-box;
+        padding-top: 10px;
+        background: rgba(0, 0, 0, 0.5);
+        height: 40px;
+        color: #eee;
+      }
+
+      #controls > div:hover {
+        background: rgba(50, 50, 50, 0.5);
+        color: #fff;
+      }
+    </style>
   </head>
   
   <body>
@@ -81,25 +131,19 @@
     -->
     <canvas id='threeCanvas'></canvas>
 
-    
     <div id='controls'>
-      
-      <div  onclick = 'WebARRocksMirror.load("static/assets/models3D/glasses1.glb"); addDetails(this)'>Glass 1   </div>
-      <div  onclick = 'WebARRocksMirror.load("static/assets/models3D/glasses1.glb"); addDetails(this)'>Glass 2   </div>
-      <div onclick = 'WebARRocksMirror.load(false)'>No glasses
-      </div>
+  
+      <div onclick = 'WebARRocksMirror.load("static/assets/models3D/glasses14.glb")'>Glasses 14</div>
+      <div onclick = 'WebARRocksMirror.load(false)'>No glasses</div>
       <div onclick = 'WebARRocksMirror.pause(true)'>Pause</div>
       <div onclick = 'WebARRocksMirror.resume(true)'>Resume</div>
       <div onclick = 'WebARRocksMirror.resize(400, 400)'>Resize</div>
       <div onclick = 'WebARRocksMirror.resize(300, 450)'>Original</div>
       <div onclick = 'capture_image()'>Capture</div>
-  
     </div>
-    <h3>Showing Recommended glasses for Heart Shaped face</h3>
-    <div id= "details" class="glass-Container"> </div>
-   
+    <h3>Showing Recommended glasses for Round Shaped face</h3>
 
-    
+
   </body>
 </html>
  
