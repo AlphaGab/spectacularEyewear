@@ -4,7 +4,7 @@ from face_detection import detect_faces
 from imageconversion import *
 
 
-app = Flask(__name__,template_folder='C:/Users/gabriel/Desktop/thesisbackend/templates')
+app = Flask(__name__,template_folder='templates')
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -43,7 +43,7 @@ def predictbase64():
 @app.route('/', methods=['GET'])
 def home():
 
-   return  redirect(url_for ('index'))
+   return  redirect(url_for('index'))
 
 
 @app.route('/index', methods=['GET'])
@@ -57,6 +57,12 @@ def index():
 def upload():
 
    return render_template('upload.html')
+
+
+@app.route('/browse', methods=['GET'])
+def browse():
+
+   return render_template('browseEyeglass.html')
 
 @app.route('/vto', methods=['GET'])
 def vto():

@@ -19,7 +19,8 @@ function main(){
     ],
 
     specWebARRocksFace: {
-      NNCPath: 'static/neuralNets/NN_GLASSES_9.json',
+      
+      NNCPath: 'static/NN_GLASSES_9.json',
       scanSettings: {
         threshold: 0.8,
         //translationScalingFactors: [0.07, 0.07, 0.1]
@@ -55,8 +56,8 @@ function main(){
     // (only the depth buffer is updated).
     // It is useful to hide the left glasses branch when the head turns on the left.
     occluderURL: "static/assets/models3D/occluder.glb",
-    modelURL: "static/assets/models3D/", //initial model loaded. false or null -> no model
-    envmapURL: "static/assets/envmaps/venice_sunset_1k.hdr",
+    modelURL: "static/assets/models3D/1-Black", //initial model loaded. false or null -> no model
+   
 
     // lighting:
     pointLightIntensity: 0.5, //intensity of the point light. Set to 0 to disable

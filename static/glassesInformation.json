@@ -1,27 +1,100 @@
 [
     {
         "name": "1",
-        "Title": "Regular",
-        "Sizes": "Sizes",
-        "Shop Name": "Starfinder",
-        "Description": "Description",
-        "imageName": "1.jpg",
+        "Title": "Amity",
+        "Sizes": "47,19,145",
+        "Shop Name": "IdealVision",
+        "Description": "Round",
+        "imageName": "1.png",
         "color": [
-            "red",
-            "black"
+            "black",
+            "green",
+            "white"
           
         ]
     },
     {
         "name": "2",
-        "Title": "Special",
-        "Sizes": "Sizes",
-        "Shop Name": "Eyebuydirect",
-        "Description": "Description",
+        "Title": "RayBan",
+        "Sizes": "55,17,145",
+        "Shop Name": "Executive Optical",
+        "Description": "Rectangle",
         "imageName": "2.png",
         "color": [
-            "orange",
+            "black",
+            "green",
+            "white"
+            
+        ]
+    },
+    {
+        "name": "3",
+        "Title": "Tossi Ultem",
+        "Sizes": "52,20,140",
+        "Shop Name": "Starfinder",
+        "Description": "Square",
+        "imageName": "3.png",
+        "color": [
+            "black",
+            "gold",
+            "white"
+            
+        ]
+    },
+    {
+        "name": "4",
+        "Title": "Dialogue",
+        "Sizes": "55,17,145",
+        "Shop Name": "Starfinder",
+        "Description": "Aviator",
+        "imageName": "4.png",
+        "color": [
+            "black",
+            "white",
+            "gold"
+            
+        ]
+    },
+    {
+        "name": "5",
+        "Title": "Marilou",
+        "Sizes": "52,20,140",
+        "Shop Name": "Ojo",
+        "Description": "Cat-Eye",
+        "imageName": "5.png",
+        "color": [
+            "pink",
+            "white",
+            "gray"
+            
+        ]
+    },
+    {
+        "name": "6",
+        "Title": "Special",
+        "Sizes": "48,21,142",
+        "Shop Name": "Eyebuydirect",
+        "Description": "Oval",
+        "imageName": "6.png",
+        "color": [
+            "white",
+            "gray",
             "green"
+            
+        ]
+    },
+    {
+        "name": "7",
+        "Title": "Wallis",
+        "Sizes": "53,20,145",
+        "Shop Name": "WarbyParker",
+        "Description": "Browline",
+        "imageName": "7.png",
+        "color": [
+            "gray",
+            "green",
+            "white"
+            
         ]
     }
 ]

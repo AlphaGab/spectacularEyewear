@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', async(event) => {
     glassJson = await getGlassDetails()
+    console.log(glassJson)
     const descriptionContainer = document.getElementById('details');
+
+
     function addDetails(glassClicked) {
       descriptionContainer.innerHTML = '';
       const img = document.createElement('img');
@@ -9,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async(event) => {
       img.src = getStaticImageUrl(glassJson[glassNumber]["imageName"]); 
       img.alt = 'Glass Image'; 
 
-    
+      console.log(glassJson)
       img.style.width = '200px';
       img.style.height = 'auto';
 
@@ -63,11 +66,11 @@ document.addEventListener('DOMContentLoaded', async(event) => {
   }
 
   function extractNumber(glassesName) {
-    // Match any sequence of digits (\d+) preceded by "glass " (case insensitive)
     const match = glassesName.match(/Glass (\d+)/i);
-    // If there's a match, return the number, otherwise return null
     return match ? parseInt(match[1]) : null;
 }
+
+
 function createColorButtons(colors, container,number) {
   for (let i = 0; i < colors.length; i++) {
     const buttonColor = document.createElement('button');
@@ -78,7 +81,6 @@ function createColorButtons(colors, container,number) {
       const clickedButton = event.target;
       const color =  clickedButton.style.backgroundColor;
       const glassId = `${number+1}-${color}.glb`; 
-      console.log(glassId)
       WebARRocksMirror.load(`static/assets/models3D/${glassId}`);
     });
   }
