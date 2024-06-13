@@ -7,8 +7,9 @@
         "Description": "Description",
         "imageName": "1.jpg",
         "color": [
-            "black",
-            "white"
+            "red",
+            "black"
+          
         ]
     },
     {
@@ -18,6 +19,9 @@
         "Shop Name": "Eyebuydirect",
         "Description": "Description",
         "imageName": "2.png",
-        "color": []
+        "color": [
+            "orange",
+            "green"
+        ]
     }
 ]

@@ -40,6 +40,11 @@ def predictbase64():
     return redirect(url_for('vto', head_shape=predictShapes))
 
 
+@app.route('/', methods=['GET'])
+def home():
+
+   return  redirect(url_for ('index'))
+
 
 @app.route('/index', methods=['GET'])
 def index():
@@ -49,7 +54,7 @@ def index():
 
 
 @app.route('/upload', methods=['GET'])
-def index():
+def upload():
 
    return render_template('upload.html')
 

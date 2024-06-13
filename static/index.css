@@ -1,0 +1,137 @@
+body {
+    margin: auto;
+}
+
+
+.navbar {
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-direction: row;
+    height: 15vh;
+    width: 100%;
+    position: sticky;
+    align-items: center;
+    justify-content: space-between;
+    border-width: thin;
+    box-sizing: border-box;
+}
+
+.navbar .brand {
+    margin-left: 10px;
+    display: flex;
+   
+    flex: 1;
+}
+
+.navbar .nav-items {
+    display: flex;
+    flex: 2;
+    gap: 50px; /* Adjust the gap between nav items as needed */
+}
+
+.navbar h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.navbar p {
+    font-family:  sans-serif;
+    font-size:larger;
+    margin: 0;
+    
+}
+.navbar p:hover{
+    color: gray;
+    cursor: pointer;
+}
+.content{
+    display: flex;
+    height: 80vh;
+    width: auto;
+    border: solid 1px black;
+    background-color: beige;
+    flex-direction: column;
+
+    align-items: center;
+   
+    
+}
+.content .bg{
+    display: flex;
+    align-items: center;
+    width: auto;
+   
+    padding-top: 20vh;
+    flex: 1;
+    flex-direction: column;
+}
+.content .bg h1{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 35px;
+}
+.content img{
+    flex:1;
+    width: auto;
+
+}
+.buttons{
+   flex: 2;
+
+}
+.black-button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+ 
+}
+
+.black-button:hover {
+    background-color: #333; /* Darken the background color on hover */
+}
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .navbar .nav-items {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .content .bg {
+        width: 100%;
+        margin-left: 0;
+        padding-top: 10vh;
+        align-items: center;
+    }
+
+    .content img {
+        width: 100%;
+        height: auto;
+    }
+
+    .buttons {
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .black-button {
+        width: 100%;
+        padding: 15px;
+        font-size: 18px;
+    }
+}

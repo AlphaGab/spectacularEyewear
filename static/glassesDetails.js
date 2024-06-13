@@ -23,15 +23,19 @@ document.addEventListener('DOMContentLoaded', async(event) => {
       const sizes = document.createElement('p');
       const description = document.createElement('p');
       const shopLink = document.createElement('p');
-      
-      
+      let buttonColor = document.createElement('button');
+
+      buttonColor.classList.add("button")
+      buttonColor.classList.add("button1")
+
 
 
       shopLink.textContent = glassJson[glassNumber]["Shop Name"];
       name.textContent = glassJson[glassNumber]["Title"]
       sizes.textContent = glassJson[glassNumber]["Sizes"]
       description.textContent =  glassJson[glassNumber]["Description"]
-    
+     
+
 
       descriptionContainer.appendChild(img);
       descriptionContainer.appendChild(h3);
@@ -39,19 +43,18 @@ document.addEventListener('DOMContentLoaded', async(event) => {
       descriptionContainer.appendChild(sizes);
       descriptionContainer.appendChild(description);
       descriptionContainer.appendChild(shopLink);
+      createColorButtons(glassJson[glassNumber]["color"],descriptionContainer,glassNumber)
     }
 
     function getStaticImageUrl(filename) {
       return `static/images/${filename}`;
     }
 
-    // Attach the addDetails function to the window so it can be called inline in the HTML
+
     window.addDetails = addDetails;
   });
 
-function getStaticImageUrl(filename) {
-    return `static/images/${filename}`;
-  }
+
 
   async function getGlassDetails() {
     const response = await fetch("/glass_details");
@@ -64,6 +67,21 @@ function getStaticImageUrl(filename) {
     const match = glassesName.match(/Glass (\d+)/i);
     // If there's a match, return the number, otherwise return null
     return match ? parseInt(match[1]) : null;
+}
+function createColorButtons(colors, container,number) {
+  for (let i = 0; i < colors.length; i++) {
+    const buttonColor = document.createElement('button');
+    buttonColor.classList.add("button", "button1");
+    buttonColor.style.backgroundColor = colors[i];
+    container.appendChild(buttonColor);
+    buttonColor.addEventListener('click', () => {
+      const clickedButton = event.target;
+      const color =  clickedButton.style.backgroundColor;
+      const glassId = `${number+1}-${color}.glb`; 
+      console.log(glassId)
+      WebARRocksMirror.load(`static/assets/models3D/${glassId}`);
+    });
+  }
 }
 
 
