@@ -9,7 +9,7 @@ app = Flask(__name__,template_folder='templates')
 @app.route('/predict', methods=['POST'])
 def predict():
     if 'image' not in request.files or request.files['image'].filename == '':
-       
+      
         return redirect(url_for('upload'))
     
     image_file = request.files['image']
