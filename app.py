@@ -6,6 +6,7 @@ from imageconversion import *
 
 app = Flask(__name__,template_folder='templates')
 
+server = app.server
 
 if __name__ == "__main__":
     app.run()
