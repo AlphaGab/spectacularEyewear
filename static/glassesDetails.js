@@ -1,32 +1,32 @@
+
+let currentcolor =''
 document.addEventListener('DOMContentLoaded', async(event) => {
     glassJson = await getGlassDetails()
     console.log(glassJson)
     const descriptionContainer = document.getElementById('textInfo');
     const imageSection = document.getElementById("imageSection")
     let palette = document.getElementById("palette")
+    const switchButton = document.getElementById('switch')
+  
+
     function addDetails(glassClicked) {
       descriptionContainer.innerHTML=''
       imageSection.innerHTML=''
       palette.innerHTML= ''
-      
+      switchButton.innerHTML=''
       const img = document.createElement('img');
       const glassesName = glassClicked.textContent.trim();
       let glassNumber = extractNumber(glassesName) -1
       img.src = getStaticImageUrl(glassJson[glassNumber]["imageName"]); 
       img.alt = 'Glass Image'; 
-
-      
-    
+      const switchText = document.createElement('p')
+      switchText.className = 'label';
+      switchText.textContent="Remove Eyeglass Branch"
       const h3 = document.createElement('h3');
       h3.textContent = 'Glass Details';
-
-    
+      
+      buttonSwitch = makeswitchButton(glassNumber);
      
-     
-
-
-
-  
 
       imageSection.appendChild(img)
       descriptionContainer.appendChild(createParagraph('Eyeglass Name', glassJson[glassNumber]["Title"]));
@@ -36,6 +36,9 @@ document.addEventListener('DOMContentLoaded', async(event) => {
       descriptionContainer.appendChild(createParagraph('Colors', ''));
     
       createColorButtons(glassJson[glassNumber]["color"],palette,glassNumber)
+      switchButton.appendChild(switchText)
+      switchButton.appendChild(buttonSwitch)
+
     }
 
     function getStaticImageUrl(filename) {
@@ -69,11 +72,26 @@ function createColorButtons(colors, container,number) {
   
     buttonColor.addEventListener('click', () => {
       const clickedButton = event.target;
-      const color =  clickedButton.style.backgroundColor;
-      const glassId = `${number+1}-${color}.glb`; 
+      currentcolor =  clickedButton.style.backgroundColor;
+      
+      let glassId = `${number+1}-${currentcolor}.glb`; 
+      turnOffSwitch()
       WebARRocksMirror.load(`static/assets/models3D/${glassId}`);
     });
   }
+}
+function removeBranch(switchButton,number){
+  switchButton.addEventListener('change',(event)=>{
+    let glassId = `${number+1}-${currentcolor}-less.glb`; 
+    if (event.target.checked) {
+      console.log(currentcolor)
+    
+      WebARRocksMirror.load(`static/assets/models3D/${glassId}`);
+    } else {
+      glassId =`${number+1}-${currentcolor}.glb`
+      WebARRocksMirror.load(`static/assets/models3D/${glassId}`);
+    }
+  })
 }
 function remove(){
   const descriptionContainer = document.getElementById('textInfo');
@@ -93,6 +111,30 @@ const createParagraph = (labelText, valueText) => {
   p.append(valueText);
   return p;
 };
+function makeswitchButton(number){
+  const label = document.createElement('label');
+  label.classList.add('switch');
+
+  // Create input element
+  const input = document.createElement('input');
+  input.type = 'checkbox';
+  input.id = 'toggleSwitch';
+
+ 
+  const span = document.createElement('span');
+  span.classList.add('slider', 'round');
+
+
+  label.appendChild(input);
+  label.appendChild(span);
+
+  removeBranch(input,number)
+  return label
+}
+function turnOffSwitch(){
+  const switchInput = document.getElementById('toggleSwitch');
+  switchInput.checked = false; 
+}
 
 
 

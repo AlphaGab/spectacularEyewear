@@ -58,6 +58,17 @@ def upload():
 
    return render_template('upload.html')
 
+@app.route('/about', methods=['GET'])
+def about():
+
+   return render_template('aboutUs.html')
+
+@app.route('/disclaimer', methods=['GET'])
+def disclaimer():
+
+   return render_template('disclaimer.html')
+
+
 
 @app.route('/browse', methods=['GET'])
 def browse():

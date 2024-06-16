@@ -73,37 +73,54 @@
       You can tweak the rendering of the video in WebARRocksFaceThreeHelper.js,
       by editing the fragment shader of _shps.copy
     -->
-    <canvas id='WebARRocksFaceCanvas'></canvas>
+    <div class="container">
+      <div class="block">
+        <div id="imageSection"></div>
+        <h1>Recommended Eyeglasses</h1></div>
+      <div class="canvas-wrapper">
+        <canvas id='WebARRocksFaceCanvas'></canvas>
+        <canvas id='threeCanvas'></canvas>
+      </div>
+      <div class="block" id="information">
+        <div id="textInfo">
 
+      
+      </div>
+      <div id = "palette">
+       
+      </div>
+    </div>
+    </div>
 
-    <!--
-      The second canvas is used by THREE.js for 3D rendering:
-    -->
-    <canvas id='threeCanvas'></canvas>
-
-    
     <div id='controls'>
          
-      <div  onclick = 'WebARRocksMirror.load("static/assets/models3D/1-Black.glb"); addDetails(this)'>Glass 1</div>
-
-      <div  onclick = 'WebARRocksMirror.load("static/assets/models3D/3-Black.glb"); addDetails(this)'>Glass 3</div>
-      <div  onclick = 'WebARRocksMirror.load("static/assets/models3D/4-Black.glb"); addDetails(this)'>Glass 4</div>
-      <div  onclick = 'WebARRocksMirror.load("static/assets/models3D/5-Pink.glb"); addDetails(this)'>Glass 5</div>
-   
-      <div  onclick = 'WebARRocksMirror.load("static/assets/models3D/6-White.glb"); addDetails(this)'>Glass 6</div>
-      <div onclick = 'WebARRocksMirror.load(false)'>No glasses
+      <div class="choices" onclick='WebARRocksMirror.load("static/assets/models3D/1-Black.glb"); addDetails(this)'>
+        Glass 1
       </div>
-      <div onclick = 'WebARRocksMirror.pause(true)'>Pause</div>
-      <div onclick = 'WebARRocksMirror.resume(true)'>Resume</div>
-      <div onclick = 'WebARRocksMirror.resize(400, 400)'>Resize</div>
-      <div onclick = 'WebARRocksMirror.resize(300, 450)'>Original</div>
-      <div onclick = 'capture_image()'>Capture</div>
-  
-    </div>
-    <h3>Showing Recommended glasses for Oval Shaped face</h3>
-    <div id= "details" class="glass-Container"> 
+      <div class="choices" onclick='WebARRocksMirror.load("static/assets/models3D/3-Black.glb"); addDetails(this)'>
+        Glass 3
+      </div>
+      <div class="choices" onclick='WebARRocksMirror.load("static/assets/models3D/4-Black.glb"); addDetails(this)'>
+        Glass 4
+      </div>
+      <div class="choices" onclick='WebARRocksMirror.load("static/assets/models3D/5-Pink.glb"); addDetails(this)'>
+        Glass 5
+      </div>
+      <div class="choices" onclick='WebARRocksMirror.load("static/assets/models3D/6-White.glb"); addDetails(this)'>
+        Glass 6
+      </div>
+      <div class= "choices" onclick = 'WebARRocksMirror.load(false); remove()' >No glasses
+      </div>
+      <div class="choices" onclick = 'WebARRocksMirror.pause(true)'>Pause</div>
+      <div class ="choices" onclick = 'WebARRocksMirror.resume(true)'>Resume</div>
       
-    </div>
+      <div  class= "choices" onclick = 'WebARRocksMirror.resize(260, 450)'>Refresh</div>
+    
+    
+      </div>
+
+   
+  
    
 
     

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="brand">
+            <h2>Spectacular Eyewear</h2>
+        </div>
+        <div class="nav-items">
+           
+            <p onclick="window.location.href = '/camera';">Recommended</p>
+            <p onclick="window.location.href = '/';">Home</p>
+        </div>
+    
+        </div>
+    <div class="banner">
+        <H1>About</H1>
+    </div>
+    <br>
+    <br>
+   
+    <div class="aboutUs" >
+        <div id="picture"><img src="{{ url_for('static', filename='images/members/group.jpg') }}"></div>  
+        <div id="message"><h3>About Us</h3>
+        <p>We are third-year BSCSSE students from FEU Alabang, passionate about leveraging technology to enhance everyday experiences. Our Eyewear Recommendation System uses advanced algorithms to provide personalized eyewear suggestions tailored to your style and needs. This project showcases our commitment to innovation and excellence in software engineering. We hope you enjoy using our system as much as we enjoyed creating it.</p></div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <h1 class="members-title">Members</h1>
+    <br>
+    <div class="members">
+        <div class="container"><img src="{{ url_for('static', filename='images/members/gab.jpg') }}" alt="">
+            <div class="status">
+                 <h3>Leader</h3>
+                 <p>Jose Gabriel Abaya</p>
+            </div>
+        </div>
+        <div class="container"><img src="{{ url_for('static', filename='images/members/francis.jpg') }}" alt="">
+            <div class="status">
+                <h3>Co-Leader</h3>
+                <p>Francis Ludwick Madrid</p>
+           </div>
+        </div>
+
+        <div class="container"><img src="{{ url_for('static', filename='images/members/miguel.jpg') }}" alt="">
+         
+            <div class="status">
+                <h3>Member</h3>
+                <p>Miguel Angelo Cervantez</p>
+           </div>
+        </div>
+        <div class="container"><img src="{{ url_for('static', filename='images/members/shali.jpg') }}" alt="">
+            <div class="status">
+                <h3>Member</h3>
+                <p>Shalimar Arzaga</p>
+           </div>
+        </div>   
+    </div>
+    <br>
+    <br>
+    <footer>
+        <p onclick="window.location.href = '/about';">About Us</p>
+      
+        <p>&nbsp|&nbsp</p>
+        <p onclick="window.location.href = '/disclaimer';">Disclaimer</p>
+    </footer>
+</body>
+</html>
