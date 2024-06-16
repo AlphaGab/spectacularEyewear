@@ -7,24 +7,29 @@
 
     <title>Spectacular Eyeglasses VTO demo</title>
     
-    
+    <!-- INCLUDE WebAR.rocks.face MAIN SCRIPT -->
     <script src="{{ url_for('static', filename='dist/WebARRocksFace.js') }}"></script>
   
     
     
     <script src="{{ url_for('static', filename='helpers/WebARRocksFaceThreeHelper.js') }}"></script>
   
-   
+    <!-- INCLUDE MAIN HELPER -->
+    
+
+    <!-- THREE.JS, FOR THE RENDERING -->
+    <!-- WARNING: for production you should replace three.js by three.min.js -->
     <script src="{{ url_for('static', filename='libs/three/v136/build/three.js') }}"></script>
     
     <script src="{{ url_for('static', filename='libs/three/v136/examples/js/loaders/GLTFLoader.js') }}"></script>
 
 
-   
+    <!-- THREE.JS RGBE loader - you can remove it if you don't use envmap: -->
         
     <script src="{{ url_for('static', filename='libs/three/v136/examples/js/loaders/RGBELoader.js') }}"></script>
     
 
+    <!-- THREE.JS postprocessing - you can remove it if you don't use bloom or temporal anti aliasing : -->
     <script src="{{ url_for('static', filename='libs/three/v136/examples/js/postprocessing/EffectComposer.js') }}"></script>
   
     <script src="{{ url_for('static', filename='libs/three/v136/examples/js/postprocessing/ShaderPass.js') }}"></script>
@@ -57,11 +62,11 @@
   </head>
   
   <body>
-  
+    
     <div class="container">
       <div class="block">
         <div id="imageSection"></div>
-        <h1>Recommended Eyewear for Square face Shape</h1></div>
+        <h1>Recommended Eyewear for Oval face Shape</h1></div>
       <div class="canvas-wrapper">
         <canvas id='WebARRocksFaceCanvas'></canvas>
         <canvas id='threeCanvas'></canvas>
@@ -85,15 +90,17 @@
       <div class="choices" onclick='WebARRocksMirror.load("static/assets/models3D/1-Black.glb"); addDetails(this)'>
         Glass 1
       </div>
-      
+      <div class="choices" onclick='WebARRocksMirror.load("static/assets/models3D/3-Black.glb"); addDetails(this)'>
+        Glass 3
+      </div>
       <div class="choices" onclick='WebARRocksMirror.load("static/assets/models3D/4-Black.glb"); addDetails(this)'>
         Glass 4
       </div>
+      <div class="choices" onclick='WebARRocksMirror.load("static/assets/models3D/5-Pink.glb"); addDetails(this)'>
+        Glass 5
+      </div>
       <div class="choices" onclick='WebARRocksMirror.load("static/assets/models3D/6-White.glb"); addDetails(this)'>
         Glass 6
-      </div>
-      <div class="choices" onclick='WebARRocksMirror.load("static/assets/models3D/7-White.glb"); addDetails(this)'>
-        Glass 7
       </div>
       <div class= "choices" onclick = 'WebARRocksMirror.load(false); remove()' >No glasses
       </div>
