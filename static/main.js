@@ -79,7 +79,7 @@ function main(){
     debugOccluder: false
 
   }).then(function(){
-    console.log('WebARRocksMirror initialized successfully');
+   
 
     // display controls:
     document.getElementById('controls').style.display = 'flex';
@@ -110,6 +110,6 @@ function capture_image(){
     }
   });
 }
-console.log("hello")
+
 
 window.addEventListener('load', main);

@@ -62,21 +62,11 @@
   </head>
   
   <body>
-     <!--
-      The first canvas is used by WebAR.rocks.mirror
-      It is linked to a WebGL context used by the deep learning engine
-      And it displays the video of the webcam.
-      
-      Since we need to transfer the video to a texture for face detection,
-      it is not costly at all to use this texture for display.
-
-      You can tweak the rendering of the video in WebARRocksFaceThreeHelper.js,
-      by editing the fragment shader of _shps.copy
-    -->
+   
     <div class="container">
       <div class="block">
         <div id="imageSection"></div>
-        <h1>Recommended Eyeglasses</h1></div>
+        <h1>Recommended Eyeglasses for Oblong face Shape</h1></div>
       <div class="canvas-wrapper">
         <canvas id='WebARRocksFaceCanvas'></canvas>
         <canvas id='threeCanvas'></canvas>

@@ -4,16 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Image</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+    <script>
+        function validateForm() {
+            var fileInput = document.querySelector('input[name="image"]');
+            if (!fileInput.files || !fileInput.files[0]) {
+                alert('Please select a file to upload.');
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
+
 <body>
+         
+    <div class="navbar">
+      <div class="brand">
+          <h2>Spectacular Eyewear</h2>
+      </div>
+      <div class="nav-items">
+         
+          <p onclick="window.location.href = '/camera';">Recommended</p>
+          <p onclick="window.location.href = '/';">Home</p>
+      </div>
+   
+  </div>
+  <div style="margin: 20px; font-family:  monospace;">
     <h1>Eyeglass Virtual Try on by Figures Group</h1>
     <h1>Upload Image</h1>
     <form action="/predict" method="post" enctype="multipart/form-data">
         <input type="file" name="image" accept="image/*">
-        <button type="submit">Upload</button>
+        <button class="black-button" type="submit" onclick='validateForm()'>Upload</button>
     </form>
 <H3>Click the button to use Camera Instead</H3>
-<button onclick= "window.location.href='/camera'" type="button">Use camera</button>
-
+<button class="black-button" onclick= "window.location.href='/camera'" type="button">Use camera</button>
+</div>
 </body>
 </html>

@@ -84,7 +84,7 @@ function removeBranch(switchButton,number){
   switchButton.addEventListener('change',(event)=>{
     let glassId = `${number+1}-${currentcolor}-less.glb`; 
     if (event.target.checked) {
-      console.log(currentcolor)
+     
     
       WebARRocksMirror.load(`static/assets/models3D/${glassId}`);
     } else {

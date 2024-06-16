@@ -4,9 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prediction Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+    
 </head>
+
 <body>
+       
+    <div class="navbar">
+        <div class="brand">
+            <h2>Spectacular Eyewear</h2>
+        </div>
+        <div class="nav-items">
+           
+            <p onclick="window.location.href = '/camera';">Recommended</p>
+            <p onclick="window.location.href = '/';">Home</p>
+        </div>
+    </div>
+    <div style="margin: 20px;">
     <h1>No face Detected</h1>
-   
+</div>
 </body>
 </html>

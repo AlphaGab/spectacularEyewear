@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webcam Head Placement</title>
     <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
 </head>
 <body>
+ 
+  
     <h2>Take an Image to determine Face Shape</h2>  
     <div class="container">
          
         <video id="video" autoplay></video>
        
         <canvas id="canvas" width="700" height="500" style="display:none;"></canvas>
-        <button id="captureButton">Capture Image</button>
+        <button class = "black-button"  id="captureButton">Capture Image</button>
         <button onclick="window.location.href = '/upload';">Upload Image Instead</button>
     </div>
     </div>
