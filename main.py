@@ -6,6 +6,11 @@ from imageconversion import *
 
 app = Flask(__name__,template_folder='templates')
 
+
+if __name__ == "__main__":
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=8080)
+
 @app.route('/predict', methods=['POST'])
 def predict():
     if 'image' not in request.files or request.files['image'].filename == '':
