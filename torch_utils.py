@@ -1,6 +1,6 @@
 from PIL import Image
 import torch
-import torch 
+import matplotlib
 import torch.nn as nn
 import torchvision.transforms as T
 import io

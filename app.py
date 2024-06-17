@@ -2,14 +2,14 @@ from flask import Flask, request, jsonify, render_template, redirect,url_for,jso
 from torch_utils import *
 from face_detection import detect_faces
 from imageconversion import *
-import gunicorn
+
 
 app = Flask(__name__,template_folder='templates')
 
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host = '0.0.0.0',port=5000)
 
 @app.route('/predict', methods=['POST'])
 def predict():
